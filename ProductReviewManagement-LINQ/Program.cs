@@ -1,4 +1,10 @@
-﻿using System;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Program.cs" company="Bridgelabz">
+//   Copyright © 2018 Company
+// </copyright>
+// <creator Name="Dheer Singh Meena"/>
+// --------------------------------------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
@@ -9,6 +15,7 @@ namespace ProductReviewManagement_LINQ
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Product Management Review Program");
+            ///UC1 Creating a List of ProductReview and Adding values into List.
             List<ProductReview> productReviewlist = new List<ProductReview>()
             {
                 new ProductReview() { ProductId = 1, UserId = 1, Rating = 5, Review = "Excelent", isLike = true },
