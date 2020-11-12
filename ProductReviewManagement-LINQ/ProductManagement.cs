@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.WebSockets;
 using System.Text.RegularExpressions;
 
 namespace ProductReviewManagement_LINQ
@@ -83,6 +84,19 @@ namespace ProductReviewManagement_LINQ
             foreach (var productReview in recordedData)
             {
                 Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
+            }
+        }
+        /// <summary>
+        /// UC7 Retrieving reviews and productId using the lambda expression syntax
+        /// </summary>
+        /// <param name="list"></param>
+        public static void RetrieveProductIDAndReviewUsingLambdaSyntax(List<ProductReview> list)
+        {
+            var recordedData = list.Select(reviews => new { ProductId = reviews.ProductId, Review = reviews.Review });
+            Console.WriteLine("\n Retrieving Product and Review from list");
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("Product ID : " + productReview.ProductId + "\t" + "Review : " + productReview.Review);
             }
         }
     }
