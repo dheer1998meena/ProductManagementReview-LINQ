@@ -57,5 +57,19 @@ namespace ProductReviewManagement_LINQ
                 Console.WriteLine("ProductId : " +productReview.ProductId + "  Count : " + productReview.Count);
             }
         }
+        /// <summary>
+        /// UC5 Retrieves only the product id and review of all records.
+        /// </summary>
+        /// <param name="list"></param>
+        public static void RetrieveProductIDAndReviewOfAllRecords(List<ProductReview> list)
+        {
+            var recordedData = (from products in list
+                                select new { ProductId = products.ProductId, Review = products.Review });
+            Console.WriteLine("\n Retrieving Product and Review from list");
+            foreach(var productReview in recordedData)
+            {
+                Console.WriteLine("Product ID : " + productReview.ProductId + "\t" + "Review : " + productReview.Review);
+            }
+        }
     }
 }
