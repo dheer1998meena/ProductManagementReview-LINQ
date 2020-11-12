@@ -38,6 +38,8 @@ namespace ProductReviewManagement_LINQ
             ProductManagement.RetrieveTopThreeRatedRecords(productReviewlist);
             /// UC3 Retrieves the records with rating greater than three.
             ProductManagement.RetrieveRecordsWithGreaterThanThreeRating(productReviewlist);
+            ///UC4  Retrieves the count of reviews for each productID.
+            ProductManagement.RetrieveCountOfReviewForEachProductId(productReviewlist);
             Console.ReadLine();
         }
     }

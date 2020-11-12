@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ProductReviewManagement_LINQ
 {
@@ -41,6 +42,19 @@ namespace ProductReviewManagement_LINQ
             foreach (var productReview in recordedData)
             {
                 Console.WriteLine("Product Id :" + productReview.ProductId + "\t" + "User Id :" + productReview.UserId + "\t" + "Rating ;" + productReview.Rating + "\t" + "Review :" + productReview.Review + "\t" + "Is Like :" + productReview.isLike);
+            }
+        }
+        /// <summary>
+        /// UC4 Retrieves the count of reviews for each productID.
+        /// </summary>
+        /// <param name="list"></param>
+        public static void RetrieveCountOfReviewForEachProductId(List<ProductReview> list)
+        {
+            var recordedData = (list.GroupBy(p => p.ProductId).Select(x => new { ProductId = x.Key, Count = x.Count() }));
+            Console.WriteLine("\n Count group by ProductId");
+            foreach (var productReview in recordedData)
+            {
+                Console.WriteLine("ProductId : " +productReview.ProductId + "  Count : " + productReview.Count);
             }
         }
     }
