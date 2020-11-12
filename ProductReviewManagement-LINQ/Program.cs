@@ -44,6 +44,8 @@ namespace ProductReviewManagement_LINQ
             ProductManagement.RetrieveProductIDAndReviewOfAllRecords(productReviewlist);
             /// UC6 Skip top five records from the list and display other records.
             ProductManagement.SkipTopFiveRecords(productReviewlist);
+            /// UC7 Retrieving reviews and productId using the lambda expression syntax.
+            ProductManagement.RetrieveProductIDAndReviewUsingLambdaSyntax(productReviewlist);
             Console.ReadLine();
         }
     }
