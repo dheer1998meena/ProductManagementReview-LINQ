@@ -15,7 +15,7 @@ namespace ProductReviewManagement_LINQ
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome To Product Management Review Program");
-            ///UC1 Creating a List of ProductReview and Adding values into List.
+            /// UC1 Creating a List of ProductReview and Adding values into List.
             List<ProductReview> productReviewlist = new List<ProductReview>()
             {
                 new ProductReview() { ProductId = 1, UserId = 1, Rating = 5, Review = "Excelent", isLike = true },
@@ -34,11 +34,11 @@ namespace ProductReviewManagement_LINQ
             {
                 Console.WriteLine("Product Id :" + list.ProductId + "\t" + "User Id :" + list.UserId + "\t" + "Rating ;" + list.Rating + "\t" + "Review :" + list.Review + "\t" + "Is Like :" + list.isLike);
             }
-            ///UC2 Retrieve top 3 records from the list who’s rating is high using LINQ
+            /// UC2 Retrieve top 3 records from the list who’s rating is high using LINQ
             ProductManagement.RetrieveTopThreeRatedRecords(productReviewlist);
-            ///UC3 Retrieves the records with rating greater than three.
+            /// UC3 Retrieves the records with rating greater than three.
             ProductManagement.RetrieveRecordsWithGreaterThanThreeRating(productReviewlist);
-            ///UC4  Retrieves the count of reviews for each productID.
+            /// UC4 Retrieves the count of reviews for each productID.
             ProductManagement.RetrieveCountOfReviewForEachProductId(productReviewlist);
             /// UC5 Retrieves only the product id and review of all records.
             ProductManagement.RetrieveProductIDAndReviewOfAllRecords(productReviewlist);
@@ -48,8 +48,10 @@ namespace ProductReviewManagement_LINQ
             ProductManagement.RetrieveProductIDAndReviewUsingLambdaSyntax(productReviewlist);
             /// UC8 Add data into data table.
             ProductReviewDataTable.AddDataIntoDataTable();
-            ///UC 9 : Retrieves all records whose is like is true.
+            /// UC9 Retrieves all records whose is like is true.
             ProductReviewDataTable.RetrieveRecordWithTrueIsLike();
+            /// UC10 Finds the average rating for each productId.
+            ProductReviewDataTable.FindAverageRatingOfTheEachProductId();
             Console.ReadLine();
         }
     }
