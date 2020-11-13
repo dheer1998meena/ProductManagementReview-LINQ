@@ -54,6 +54,8 @@ namespace ProductReviewManagement_LINQ
             ProductReviewDataTable.FindAverageRatingOfTheEachProductId();
             /// UC11 Retrieves all records with review contains Nice message.
             ProductReviewDataTable.RetrieveRecordsWithReviewContainsNice();
+            /// UC12 Retrieves the records for given userId sorted by rating.
+            ProductReviewDataTable.RetrieveRecordsForGivenUserIdOrderByRating();
             Console.ReadLine();
         }
     }
