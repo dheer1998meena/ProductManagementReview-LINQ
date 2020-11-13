@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace ProductReviewManagement_LINQ
@@ -56,6 +57,18 @@ namespace ProductReviewManagement_LINQ
             foreach (var list in retrieveData)
             {
                 Console.WriteLine("Product Id :" + list.Field<int>("ProductId") + "\t" + "User Id :" + list.Field<int>("UserId") + "\t" + "Rating ;" + list.Field<double>("Rating") + "\t" + "Review :" + list.Field<string>("Review") + "\t" + "Is Like :" + list.Field<bool>("IsLike"));
+            }
+        }
+        /// <summary>
+        /// UC10 Finds the average rating for each productId.
+        /// </summary>
+        public static void FindAverageRatingOfTheEachProductId()
+        {
+            var records = table.AsEnumerable().GroupBy(r => r.Field<int>("ProductId")).Select(r => new { ProductId = r.Key, Average = r.Average(z =>(z.Field<double>("Rating"))) });
+            Console.WriteLine("\nProductId and its average rating");
+            foreach (var v in records)
+            {
+                Console.WriteLine($"ProductID:{v.ProductId},AverageRating:{v.Average}");
             }
         }
     }
