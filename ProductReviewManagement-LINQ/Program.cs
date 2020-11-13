@@ -46,8 +46,10 @@ namespace ProductReviewManagement_LINQ
             ProductManagement.SkipTopFiveRecords(productReviewlist);
             /// UC7 Retrieving reviews and productId using the lambda expression syntax.
             ProductManagement.RetrieveProductIDAndReviewUsingLambdaSyntax(productReviewlist);
-            /// UC8: Add data into data table.
+            /// UC8 Add data into data table.
             ProductReviewDataTable.AddDataIntoDataTable();
+            ///UC 9 : Retrieves all records whose is like is true.
+            ProductReviewDataTable.RetrieveRecordWithTrueIsLike();
             Console.ReadLine();
         }
     }
